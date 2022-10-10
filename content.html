@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  Popup Content
+
+  <select name="ddlNames" id="ddlNames">
+    <option value="Mudassar Khan">Mudassar Khan</option>
+    <option value="John Hammond">John Hammond</option>
+    <option value="Mike Stanley">Mike Stanley</option>
+  </select>
+  <br />
+  <br />
+  <input type="button" value="Select" onclick="SetName();" />
+  <script type="text/javascript">
+    function SetName() {
+      if (window.opener != null && !window.opener.closed) {
+        const doc = window.opener.document;
+        var txtName = doc.getElementById("txtName");
+        txtName.innerHTML = document.getElementById("ddlNames").value;
+        doc.getElementById('popup_container').style.visibility = 'visible';
+      }
+      window.close();
+    }
+  </script>
+</body>
+
+</html>

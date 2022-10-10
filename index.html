@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="popup-container" id="popup_container">
+    <button onclick="openWindow()">External window</button>
+    Hello
+  </div>
+
+  <div id="txtName">
+    test
+  </div>
+
+  <script>
+    function openWindow() {
+      const params = 'scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100';
+      window.open('content.html', 'chat-window', params);
+      document.getElementById('popup_container').style.visibility = 'hidden';
+    }
+  </script>
+</body>
+
+</html>
